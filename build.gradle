@@ -1,0 +1,26 @@
+buildscript {
+    ext.kotlin_version = '1.1.51'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+apply plugin: 'kotlin'
+
+ext {
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    junit = "junit:junit:4.12"
+    assertk = "com.willowtreeapps.assertk:assertk:0.9"
+    mockitoKotlin = "com.nhaarman:mockito-kotlin:1.5.0"
+    kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+}

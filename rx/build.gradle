@@ -1,0 +1,13 @@
+apply plugin: "kotlin"
+
+dependencies {
+    compile project(":core")
+
+    compile rootProject.ext.kotlin
+    compile "io.reactivex.rxjava2:rxjava:2.1.5"
+
+    testCompile rootProject.ext.junit
+    testCompile rootProject.ext.assertk
+    testCompile rootProject.ext.mockitoKotlin
+    testCompile rootProject.ext.kotlinReflect
+}
