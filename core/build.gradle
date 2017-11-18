@@ -1,10 +1,10 @@
 apply plugin: "kotlin"
 
 dependencies {
-    compile rootProject.ext.kotlin
+    implementation rootProject.ext.kotlin
 
-    testCompile rootProject.ext.junit
-    testCompile rootProject.ext.assertk
-    testCompile rootProject.ext.mockitoKotlin
-    testCompile rootProject.ext.kotlinReflect
+    testImplementation rootProject.ext.junit
+    testImplementation rootProject.ext.assertk
+    testImplementation rootProject.ext.mockitoKotlin
+    testImplementation rootProject.ext.kotlinReflect
 }
