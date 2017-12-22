@@ -1,12 +1,13 @@
-package test.java.miles.dispatch
+package miles.dispatch
 
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyZeroInteractions
 import io.reactivex.subscribers.TestSubscriber
-import main.java.miles.dispatch.core.SimpleStore
-import main.java.miles.dispatch.core.Store
-import main.java.miles.dispatch.rx.flowable
+import miles.dispatch.core.SimpleStore
+import miles.dispatch.core.State
+import miles.dispatch.core.Store
+import miles.dispatch.rx.toFlowable
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
@@ -22,13 +23,13 @@ class FlowableListenerTest {
 
     @Test
     fun testCreatingFlowableDoesNotSubscribeToStore() {
-        flowable(store)
+        toFlowable(store)
         verifyZeroInteractions(store)
     }
 
     @Test
     fun testFlowableSubscribesToStore() {
-        flowable(store).subscribe()
+        toFlowable(store).subscribe()
         verify(store).subscribe(any())
     }
 
@@ -37,7 +38,7 @@ class FlowableListenerTest {
         val simpleStore = SimpleStore(SimpleState(0))
         val state = SimpleState(1)
         val testSubscriber = TestSubscriber<SimpleState>()
-        flowable(simpleStore).subscribe(testSubscriber)
+        toFlowable(simpleStore).subscribe(testSubscriber)
         simpleStore.state = state
         testSubscriber.assertValueCount(1)
         testSubscriber.assertValue(state)
@@ -48,7 +49,7 @@ class FlowableListenerTest {
         val simpleStore = SimpleStore(SimpleState(0))
         val state = SimpleState(1)
         val testSubscriber = TestSubscriber<SimpleState>()
-        flowable(simpleStore).subscribe(testSubscriber)
+        toFlowable(simpleStore).subscribe(testSubscriber)
         simpleStore.state = state
         testSubscriber.assertValueCount(1)
         testSubscriber.assertValue(state)
@@ -58,4 +59,6 @@ class FlowableListenerTest {
         testSubscriber.assertValueCount(1)
         assert(testSubscriber.isCancelled)
     }
+
+    class SimpleState(val ordinal: Int) : State
 }

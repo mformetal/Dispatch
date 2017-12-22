@@ -1,4 +1,4 @@
-package main.java.miles.dispatch.rx
+package miles.dispatch.rx
 
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
@@ -20,7 +20,7 @@ fun <S : State> toFlowable(store: Store<S>) : Flowable<S> {
 }
 
 fun <S : State> Store<S>.asFlowable() : Flowable<S> {
-    return flowable(this)
+    return toFlowable(this)
 }
 
 private class FlowableListener<in S : State>(

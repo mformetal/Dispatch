@@ -1,8 +1,8 @@
 package miles.scribble.redux
 
-import main.java.miles.dispatch.core.Event
-import main.java.miles.dispatch.core.Reducer
-import main.java.miles.dispatch.core.State
+import miles.dispatch.core.Event
+import miles.dispatch.core.Reducer
+import miles.dispatch.core.State
 
 /**
  * Created by mbpeele on 8/12/17.

@@ -5,9 +5,9 @@ import assertk.assertions.isEqualTo
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.whenever
-import main.java.miles.dispatch.core.Dispatchers
-import main.java.miles.dispatch.core.Reducer
-import main.java.miles.dispatch.core.SimpleStore
+import miles.dispatch.core.Dispatchers
+import miles.dispatch.core.Reducer
+import miles.dispatch.core.SimpleStore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock

@@ -4,8 +4,8 @@ import assertk.assert
 import assertk.assertions.isEqualTo
 import com.nhaarman.mockito_kotlin.times
 import com.nhaarman.mockito_kotlin.verify
-import main.java.miles.dispatch.core.SimpleStore
-import main.java.miles.dispatch.core.StateChangeListener
+import miles.dispatch.core.SimpleStore
+import miles.dispatch.core.StateChangeListener
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
